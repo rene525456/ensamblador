@@ -1,0 +1,5 @@
+nasm -f elf64 -o hola.o hola.asm 
+ld -o hola hola.o
+
+nasm -f elf64 -o hello.o hello.asm
+gcc -o hello hello.o
