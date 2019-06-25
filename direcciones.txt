@@ -1,0 +1,6 @@
+calculadora https://foro.elhacker.net/asm/calculadora_en_lenguaje_ensamblador_linux_x86_nasm-t354590.0.html
+
+
+ejemplos nasm 64 bits https://www.youtube.com/watch?v=VQAKkuLL31g&list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn
+
+ejemplos en window nasm https://www.academia.edu/9138829/programaci%C3%B3n_en_lenguaje_ensamblador_con_NASM
