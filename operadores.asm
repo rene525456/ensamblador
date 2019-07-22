@@ -1,3 +1,14 @@
+; macro es a palabra reservada, 
+; escribir es el nombre del marcor, 
+; número de parámetro que recibirá el macro 
+%macro escribir 2
+	mov eax, 4
+	mov ebx, 1
+	mov ecx, %1
+	mov edx, %2
+	int 0x80
+%endmacro
+
 section .data
 	suma db 'La suma de 5+6 es:',0xA,0xD
 	len_suma equ $ - suma
@@ -19,11 +30,7 @@ section .text
 
 _start:
 	;***************suma********
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, suma
-	mov edx, len_suma
-	int 80h
+	escribir suma, len_suma
 
 	mov eax,5
 	mov ebx,3
@@ -31,73 +38,41 @@ _start:
 	add eax,'0'
 	mov [res],eax
 
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, res
-	mov edx, 3
-	int 80h
+	escribir res, 3
 
 	; **********************resta******************
 
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, resta
-	mov edx, len_resta
-	int 80h
+	escribir resta, len_resta
 
 	mov eax,5
 	mov ebx,3
 	sub eax,ebx
 	add eax,'0'
 	mov [res],eax
-
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, res
-	mov edx, 3
-	int 80h
+	
+	escribir res, 3
 
 	; **********************incremento******************
-
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, incremento
-	mov edx, len_incremento
-	int 80h
+	
+	escribir incremento, len_incremento
 
 	mov eax,5
 	inc eax
 	add eax,'0'
 	mov [res],eax
 
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, res
-	mov edx, 1
-	int 80h
-
+	escribir res, 1
 
 	; **********************decremento******************
 
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, decremento
-	mov edx, len_decremento
-	int 80h
+	escribir decremento, len_decremento
 
 	mov eax,5
 	dec eax
 	add eax,'0'
 	mov [res],eax
 
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, res
-	mov edx, 1
-	int 80h
-
+	escribir res, 1
 
 	mov eax,1
 	int 80h
-
-	
