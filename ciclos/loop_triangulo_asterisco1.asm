@@ -1,4 +1,4 @@
-section .data
+	section .data
 		asterisco db '*'
 		;leng equ $-asterisco
 		nueva_linea db 10,'',10

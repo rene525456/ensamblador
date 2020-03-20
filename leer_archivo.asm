@@ -22,26 +22,26 @@ _start:
 	mov eax, 5		; Servicios para el trabajo con archivos
 				; Servicio 5: apertura (open). Los parámetros necesarios son:
 	mov ebx, archivo	; EBX: la dirección de una cadena de caracteres terminada en nulo.
-	mov ecx, 0		; ECX: Modo de acceso.
-	mov edx, 0		; EDX: permisos al archivo, si se abre creándolo.
+	mov ecx, 0	; ECX: Modo de acceso.
+	mov edx, 0	; EDX: permisos al archivo, si se abre creándolo.
 	int 0x80
 
-				; Modos de acceso:
-				; O-RDONLY 0: El archivo se abre sólo para leer de él.
-				; O-WRONLY 1: El archivo se abre sólo para escribir en él.
-				; O-RDWR 2: El archivo se abre para lectura y escritura.
-				; O-CREAT 256: Crear el archivo en caso de que no exista.
-				; O-APPEND 2000h: El archivo se abre sólo para escritura al final, 
-				; añadiendo información.	
+	; Modos de acceso:
+	; O-RDONLY 0: El archivo se abre sólo para leer de él.
+	; O-WRONLY 1: El archivo se abre sólo para escribir en él.
+	; O-RDWR 2: El archivo se abre para lectura y escritura.
+	; O-CREAT 256: Crear el archivo en caso de que no exista.
+	; O-APPEND 2000h: El archivo se abre sólo para escritura al final, 
+	; añadiendo información.	
 
-	test eax, eax		; instrucción de comparación realiza la operación lógica “Y” de dos operandos, 
-				; pero NO afecta a ninguno de ellos, SÓLO afecta al registro de estado. Admite 
-				; todos los tipos de direccionamiento excepto los dos operandos en memoria
-				; TEST reg, reg
-				; TEST reg, mem
-				; TEST mem, reg
-				; TEST reg, inmediato
-				; TEST mem, inmediato 
+	test eax, eax	; instrucción de comparación realiza la operación lógica “Y” de dos operandos, 
+		; pero NO afecta a ninguno de ellos, SÓLO afecta al registro de estado. Admite 
+		; todos los tipos de direccionamiento excepto los dos operandos en memoria
+		; TEST reg, reg
+		; TEST reg, mem
+		; TEST mem, reg
+		; TEST reg, inmediato
+		; TEST mem, inmediato 
 	jz salir
 	mov dword[idarchivo], eax
 

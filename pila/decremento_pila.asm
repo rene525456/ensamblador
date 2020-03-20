@@ -39,11 +39,11 @@ imprimir:
 	mov edx, 1
 	int 80h
 
-	mov eax, 4
-	mov ebx, 1
-	mov ecx, new_line
-	mov edx, 1
-	int 80h
+	;mov eax, 4
+	;mov ebx, 1
+	;mov ecx, new_line
+	;mov edx, 1
+	;int 80h
 
 	pop eax
 	sub eax, '0'
