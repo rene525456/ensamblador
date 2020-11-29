@@ -9,7 +9,7 @@
 segment .data
 	msg2 db "Leer desde un archivo :",0xA
 	len2 equ $-msg2
-	archivo db "/home/rene/proyectos/ensamblador/archivo.txt",0
+	archivo db "/home/rene/Desktop/ensamblador/archivo.txt",0
 
 segment .bss
 	texto resb 30

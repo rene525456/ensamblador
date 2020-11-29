@@ -13,8 +13,8 @@ l1:
 	call imprimir_enter
 	
 	pop ecx
-	mov ebx, ecx
-	push ebx
+	;mov ebx, ecx
+	push ecx
 	
 l2:
 	push ecx		;se envia la referencia de ecx a pila
